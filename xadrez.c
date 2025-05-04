@@ -38,6 +38,16 @@ int main(){
     printf("Escolha: ");
     scanf("%d", &jogador);
 
+    // Valor ! das opões * Fim de jogo *
+    if (jogador < 1 || jogador > 3)
+    {
+        printf("!! Opção inválida !!\n");
+
+        return 2;
+    }
+    
+     // ====== Ínicio do jogo ======
+
     switch (jogador)
     {
     case 1:
@@ -47,6 +57,13 @@ int main(){
         printf("1. Para cima.\n");
         printf("Escolha: ");
         scanf("%d", &jogador);
+        // Valor ! das opões * Fim de jogo *
+        if (jogador <1 || jogador > 1)
+        {
+            printf("!! Opção inválida !!\n");
+        
+        return 3;
+        }
         // ===== Escolha do avanço das casas =====
         printf("Mover quantas vezes?\n");
             printf("1.\n");
@@ -59,10 +76,15 @@ int main(){
             printf("8.\n");
             printf("Selecione: ");
             scanf("%d", &casas);
+        if (casas <1 || casas > 8)
+            {
+                printf("!! Opção inválida !!\n");
+            return 4;
+            }
         for (torre = 0; torre < casas; torre++) // Valor inicial da Torre (0) e o limite de repetições = casas
             {
                 printf("Torre para cima %d vezes!\n", casas);
-            }
+            } 
         break;
     
     case 2:
@@ -84,6 +106,11 @@ int main(){
               printf("8.\n");
               printf("Selecione: ");
               scanf("%d", &casas);
+              if (casas <1 || casas > 8)
+            {
+                printf("!! Opção inválida !!\n");
+            return 5;
+            }
         while (bispo < casas) // Valor inicial do Bispo (0) e o limite de repetições = casas
             {
                 printf("Bispo cima, direita %d vezes!\n", casas);
@@ -111,16 +138,19 @@ int main(){
              printf("8.\n");
              printf("Selecione: ");
              scanf("%d", &casas);
+             if (casas <1 || casas > 8)
+            {
+                printf("!! Opção inválida !!\n");
+            return 4;
+            }
      do
      {
         printf("Rainha esquerda %d vezes!\n", casas);
             rainha++;
      } while (rainha < casas); // Valor inicial da Rainha (0) e o limite de repetições = casas
-     
         break;
 
     default:
-    printf("Opção inválida!");
         break;
     }
         return 0;
