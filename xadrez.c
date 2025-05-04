@@ -4,7 +4,7 @@
 
 int main(){
 
-    int jogador, bispo = 0, torre, rainha, casas; // Variáveis
+    int jogador, bispo = 0, torre, rainha = 0, casas; // Variáveis
     int paraCima, paraBaixo, direita, esquerda; // Variáveis de direção 
     /*
     Torre - For
@@ -21,6 +21,7 @@ int main(){
     printf("Escolha: ");
     scanf("%d", &jogador);
 
+    // ... Caso digite 2 jogo será encerrado ...
     if (jogador == 2)
     {
         printf("Saindo do jogo....\n");
@@ -37,24 +38,17 @@ int main(){
     printf("Escolha: ");
     scanf("%d", &jogador);
 
-    // ====== Escolha da Direção ======
-    printf("\n||| Escolha a direção |||\n");
-    printf("1. Para cima.\n");
-    printf("2. Para baixo.\n");
-    printf("3. Para esquerda.\n");
-    printf("4. Para direita.\n");
-    printf("Escolha: ");
-    scanf("%d", &jogador);
-
     switch (jogador)
-    if (jogador == torre)
-    {
-    
     {
     case 1:
-        if (jogador == 1)
-        {
-            printf("Mover quantas vezes?\n");
+        printf("\n||| Você escolheu a Torre|||\n");
+         // ====== Escolha da Direção ======
+        printf("\n||| Escolha a direção |||\n");
+        printf("1. Para cima.\n");
+        printf("Escolha: ");
+        scanf("%d", &jogador);
+        // ===== Escolha do avanço das casas =====
+        printf("Mover quantas vezes?\n");
             printf("1.\n");
             printf("2.\n");
             printf("3.\n");
@@ -65,107 +59,69 @@ int main(){
             printf("8.\n");
             printf("Selecione: ");
             scanf("%d", &casas);
-        } for (torre = 0; torre < casas; torre++) // Valor inicial da Torre (0) e até quantas casas andará (5)
-        {
-            printf("Para cima %d vezes!\n", casas);
-        }
-        break;    
+        for (torre = 0; torre < casas; torre++) // Valor inicial da Torre (0) e o limite de repetições = casas
+            {
+                printf("Torre para cima %d vezes!\n", casas);
+            }
+        break;
     
     case 2:
-    if (jogador == 2)
-    {
-        printf("Mover quantas vezes?\n");
-        printf("1.\n");
-        printf("2.\n");
-        printf("3.\n");
-        printf("4.\n");
-        printf("5.\n");
-        printf("6.\n");
-        printf("7.\n");
-        printf("8.\n");
-        printf("Selecione: ");
-        scanf("%d", &casas);
-    }
-
+        printf("\n||| Você escolheu o Bispo|||\n");
+          // ====== Escolha da Direção ======
+          printf("\n||| Escolha a direção |||\n");
+          printf("1. Para cima (Direita).\n");
+          printf("Escolha: ");
+          scanf("%d", &jogador);
+          // ===== Escolha do avanço das casas =====
+          printf("Mover quantas vezes?\n");
+              printf("1.\n");
+              printf("2.\n");
+              printf("3.\n");
+              printf("4.\n");
+              printf("5.\n");
+              printf("6.\n");
+              printf("7.\n");
+              printf("8.\n");
+              printf("Selecione: ");
+              scanf("%d", &casas);
+        while (bispo < casas) // Valor inicial do Bispo (0) e o limite de repetições = casas
+            {
+                printf("Bispo cima, direita %d vezes!\n", casas);
+                  
+                  bispo++;
+            }
         break;
 
     case 3:
-    if (jogador == 3)
-    {
-        printf("Mover quantas vezes?\n");
-        printf("1.\n");
-        printf("2.\n");
-        printf("3.\n");
-        printf("4.\n");
-        printf("5.\n");
-        printf("6.\n");
-        printf("7.\n");
-        printf("8.\n");
-        printf("Selecione: ");
-        scanf("%d", &casas);
-    }
-
+        printf("\n||| Você escolheu a Rainha|||\n");
+         // ====== Escolha da Direção ======
+         printf("\n||| Escolha a direção |||\n");
+         printf("1. Esquerda.\n");
+         printf("Escolha: ");
+         scanf("%d", &jogador);
+         // ===== Escolha do avanço das casas =====
+         printf("Mover quantas vezes?\n");
+             printf("1.\n");
+             printf("2.\n");
+             printf("3.\n");
+             printf("4.\n");
+             printf("5.\n");
+             printf("6.\n");
+             printf("7.\n");
+             printf("8.\n");
+             printf("Selecione: ");
+             scanf("%d", &casas);
+     do
+     {
+        printf("Rainha esquerda %d vezes!\n", casas);
+            rainha++;
+     } while (rainha < casas); // Valor inicial da Rainha (0) e o limite de repetições = casas
+     
         break;
 
-    case 4:
-    if (jogador == 4)
-        {
-            printf("Mover quantas vezes?\n");
-            printf("1.\n");
-            printf("2.\n");
-            printf("3.\n");
-            printf("4.\n");
-            printf("5.\n");
-            printf("6.\n");
-            printf("7.\n");
-            printf("8.\n");
-            printf("Selecione: ");
-            scanf("%d", &casas);
-        }
-
-        break;
-    
     default:
+    printf("Opção inválida!");
         break;
     }
-}
-    /*
-    // ----- Torre -----
-    if (jogador == 1){
-    for (torre = 0; torre <5 ; torre++) // Valor inicial da Torre (0) e até quantas casas andará (5)
-    {
-        printf("Direita!\n");
+        return 0;
     }
-}
-
-    // ----- Bispo -----
-    if (jogador == 2){
-        while (bispo < 5)
-        {
-            printf("Cima, direita!\n", bispo);
-            
-            bispo++;
-        }
-    }
-    
-    // ----- Rainha -----    
-    if (jogador == 3)
-    {
-        rainha = 0; // Valor Inicial da Rainha
-        do
-        {
-            if (rainha < 8)
-            {
-                printf("Esquerda!\n");
-
-                rainha++;
-            }
-            
-        } while (rainha < 8);
-    
-            printf("jogo encerrado.");
-    }
-            */
-    
-    return 0;
-}
